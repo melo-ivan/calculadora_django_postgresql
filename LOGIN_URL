@@ -1,0 +1,3 @@
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'calculadora'
+LOGOUT_REDIRECT_URL = 'login'
