@@ -1,0 +1,5 @@
+INSTALLED_APPS = [
+    ...
+    'core',
+    'django.contrib.staticfiles',
+]
