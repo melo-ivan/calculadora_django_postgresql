@@ -48,3 +48,6 @@ export DATABASE_URL=sqlite:///db.sqlite3
 python manage.py migrate
 python manage.py runserver
 
+## Licença
+
+Este projeto está licenciado sob os termos da [Licença MIT](./LICENSE).
