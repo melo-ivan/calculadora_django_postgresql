@@ -34,3 +34,28 @@ def calculadora_view(request):
         'resultado': resultado,
         'historico': historico
     })
+
+    try:
+        a = float(request.POST['operando1'])
+        b = float(request.POST['operando2'])
+        operador = request.POST['operador']
+
+        if operador == '+':
+            resultado = a + b
+        elif operador == '-':
+            resultado = a - b
+        elif operador == '*':
+            resultado = a * b
+        elif operador == '/':
+            resultado = a / b if b != 0 else "Erro"
+
+        if isinstance(resultado, float):
+            Operacao.objects.create(
+                usuario=request.user,
+                operando1=a,
+                operando2=b,
+                operador=operador,
+                resultado=resultado
+            )
+    except (ValueError, KeyError):
+        resultado = "Erro nos valores enviados"
